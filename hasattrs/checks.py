@@ -3,7 +3,7 @@ from hasattrs.attributes import CONTAINER, HASHABLE, ITERABLE, ITERATOR, REVERSA
 from hasattrs.attributes import GENERATOR, SIZED, CALLABLE, COLLECTION, SEQUENCE
 from hasattrs.attributes import MUTABLE_SEQUENCE, BYTE_STRING, SET, MUTABLE_SET
 from hasattrs.attributes import MAPPING, MUTABLE_MAPPING, MAPPING_VIEW
-from hasattrs.attributes import ITEM_VIEW, KEYS_VIEW, AWAITABLE, COROUTINE
+from hasattrs.attributes import ITEMS_VIEW, KEYS_VIEW, VALUES_VIEW, AWAITABLE, COROUTINE
 from hasattrs.attributes import ASYNC_ITERABLE, ASYNC_ITERATOR, ASYNC_GENERATOR
 
 
@@ -80,11 +80,15 @@ def has_mapping_view_attrs(obj: Any) -> bool:
 
 
 def has_item_view_attrs(obj: Any) -> bool:
-    return has_attrs(obj, ITEM_VIEW)
+    return has_attrs(obj, ITEMS_VIEW)
 
 
 def has_keys_view_attrs(obj: Any) -> bool:
     return has_attrs(obj, KEYS_VIEW)
+
+
+def has_values_view_attrs(obj: Any) -> bool:
+    return has_attrs(obj, VALUES_VIEW)
 
 
 def has_awaitable_attrs(obj: Any) -> bool:

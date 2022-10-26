@@ -25,8 +25,9 @@ MUTABLE_MAPPING = MAPPING | {'__setitem__', '__delitem__',
                              'pop', 'popitem', 'clear',
                              'update', 'setdefault'}
 MAPPING_VIEW = SIZED
-ITEM_VIEW = MAPPING_VIEW | SET
+ITEMS_VIEW = MAPPING_VIEW | SET
 KEYS_VIEW = MAPPING_VIEW | COLLECTION
+VALUES_VIEW = MAPPING_VIEW | COLLECTION
 AWAITABLE = {'__await__'}
 COROUTINE = AWAITABLE | {'send', 'throw', 'close'}
 ASYNC_ITERABLE = {'__aiter__'}
