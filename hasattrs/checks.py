@@ -1,14 +1,20 @@
-from typing import Any, Iterable
+from typing import Any, Iterable, Type, Union
+
 from hasattrs.attributes import CONTAINER, HASHABLE, ITERABLE, ITERATOR, REVERSABLE
 from hasattrs.attributes import GENERATOR, SIZED, CALLABLE, COLLECTION, SEQUENCE
 from hasattrs.attributes import MUTABLE_SEQUENCE, BYTE_STRING, SET, MUTABLE_SET
 from hasattrs.attributes import MAPPING, MUTABLE_MAPPING, MAPPING_VIEW
 from hasattrs.attributes import ITEMS_VIEW, KEYS_VIEW, VALUES_VIEW, AWAITABLE, COROUTINE
 from hasattrs.attributes import ASYNC_ITERABLE, ASYNC_ITERATOR, ASYNC_GENERATOR
+from hasattrs.types import ABC, Typing, abc_attrs
 
 
 def has_attrs(obj: Any, attrs: Iterable[str]) -> bool:
     return all(hasattr(obj, a) for a in attrs)
+
+
+def has_abc_attrs(obj: Any, abc: Union[Type[ABC], Type[Typing], str]) -> bool:
+    return has_attrs(obj, abc_attrs[abc])
 
 
 def has_container_attrs(obj: Any) -> bool:
