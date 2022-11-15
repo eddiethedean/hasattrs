@@ -10,4 +10,4 @@ from hasattrs.checks import has_async_iterable_attrs, has_async_iterator_attrs
 from hasattrs.checks import has_async_generator_attrs, has_abc_attrs
 
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
