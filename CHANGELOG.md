@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2024-10-18
+
 ### Added
 - Modern project infrastructure with `pyproject.toml` (PEP 621 compliant)
 - GitHub Actions workflows for CI/CD (tests, linting, publishing)
@@ -17,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub issue and PR templates
 - `.editorconfig` for consistent editor settings
 - Enhanced `.gitignore` with comprehensive Python and IDE ignores
+
+### Changed
+- Removed `setup.py` in favor of modern `pyproject.toml` only approach
+- All tool configurations now centralized in `pyproject.toml`
 
 ## [0.1.0] - 2024-01-XX
 
