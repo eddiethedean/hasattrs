@@ -1,17 +1,47 @@
-from enum import Enum
-from collections import abc
-import typing
+"""Type definitions and mappings for collections.abc types.
 
-from hasattrs.attributes import ASYNC_GENERATOR, ASYNC_ITERABLE, ASYNC_ITERATOR
-from hasattrs.attributes import AWAITABLE, BYTE_STRING, CALLABLE, COLLECTION
-from hasattrs.attributes import CONTAINER, COROUTINE, GENERATOR, HASHABLE
-from hasattrs.attributes import ITEMS_VIEW, ITERABLE, ITERATOR, KEYS_VIEW
-from hasattrs.attributes import MAPPING, MAPPING_VIEW, MUTABLE_MAPPING
-from hasattrs.attributes import MUTABLE_SEQUENCE, MUTABLE_SET, REVERSABLE
-from hasattrs.attributes import SEQUENCE, SET, SIZED, VALUES_VIEW
+This module provides enums and mappings between abstract base classes
+from collections.abc and typing modules to their corresponding attribute sets.
+"""
+
+import typing
+from collections import abc
+from enum import Enum
+from typing import Any, Dict
+from typing import Set as TypingSet
+
+from hasattrs.attributes import (
+    ASYNC_GENERATOR,
+    ASYNC_ITERABLE,
+    ASYNC_ITERATOR,
+    AWAITABLE,
+    BYTE_STRING,
+    CALLABLE,
+    COLLECTION,
+    CONTAINER,
+    COROUTINE,
+    GENERATOR,
+    HASHABLE,
+    ITEMS_VIEW,
+    ITERABLE,
+    ITERATOR,
+    KEYS_VIEW,
+    MAPPING,
+    MAPPING_VIEW,
+    MUTABLE_MAPPING,
+    MUTABLE_SEQUENCE,
+    MUTABLE_SET,
+    REVERSIBLE,
+    SEQUENCE,
+    SET,
+    SIZED,
+    VALUES_VIEW,
+)
 
 
 class ABC(Enum):
+    """Enum of collections.abc abstract base classes."""
+
     Container = abc.Container
     Hashable = abc.Hashable
     Iterable = abc.Iterable
@@ -40,6 +70,8 @@ class ABC(Enum):
 
 
 class Typing(Enum):
+    """Enum of typing module abstract base classes."""
+
     Container = typing.Container
     Hashable = typing.Hashable
     Iterable = typing.Iterable
@@ -65,82 +97,82 @@ class Typing(Enum):
     AsyncIterable = typing.AsyncIterable
     AsyncIterator = typing.AsyncIterator
     AsyncGenerator = typing.AsyncGenerator
-    
 
-abc_attrs = {
+
+abc_attrs: Dict[Any, TypingSet[str]] = {
     abc.Container: CONTAINER,
     typing.Container: CONTAINER,
-    'Container': CONTAINER,
+    "Container": CONTAINER,
     abc.Hashable: HASHABLE,
     typing.Hashable: HASHABLE,
-    'Hashable': HASHABLE,
+    "Hashable": HASHABLE,
     abc.Iterable: ITERABLE,
     typing.Iterable: ITERABLE,
-    'Iterable': ITERABLE,
+    "Iterable": ITERABLE,
     abc.Iterator: ITERATOR,
     typing.Iterator: ITERATOR,
-    'Iterator': ITERATOR,
-    abc.Reversible: REVERSABLE,
-    typing.Reversible: REVERSABLE,
-    'Reversible': REVERSABLE,
+    "Iterator": ITERATOR,
+    abc.Reversible: REVERSIBLE,
+    typing.Reversible: REVERSIBLE,
+    "Reversible": REVERSIBLE,
     abc.Generator: GENERATOR,
     typing.Generator: GENERATOR,
-    'Generator': GENERATOR,
+    "Generator": GENERATOR,
     abc.Sized: SIZED,
     typing.Sized: SIZED,
-    'Sized': SIZED,
+    "Sized": SIZED,
     abc.Callable: CALLABLE,
     typing.Callable: CALLABLE,
-    'Callable': CALLABLE,
+    "Callable": CALLABLE,
     abc.Collection: COLLECTION,
     typing.Collection: COLLECTION,
-    'Collection': COLLECTION,
+    "Collection": COLLECTION,
     abc.Sequence: SEQUENCE,
     typing.Sequence: SEQUENCE,
-    'Sequence': SEQUENCE,
+    "Sequence": SEQUENCE,
     abc.MutableSequence: MUTABLE_SEQUENCE,
     typing.MutableSequence: MUTABLE_SEQUENCE,
-    'MutableSequence': MUTABLE_SEQUENCE,
+    "MutableSequence": MUTABLE_SEQUENCE,
     abc.ByteString: BYTE_STRING,
     typing.ByteString: BYTE_STRING,
-    'ByteString': BYTE_STRING,
+    "ByteString": BYTE_STRING,
     abc.Set: SET,
     typing.Set: SET,
-    'Set': SET,
+    "Set": SET,
     abc.MutableSet: MUTABLE_SET,
     typing.MutableSet: MUTABLE_SET,
-    'MutableSet': MUTABLE_SET,
+    "MutableSet": MUTABLE_SET,
     abc.Mapping: MAPPING,
     typing.Mapping: MAPPING,
-    'Mapping': MAPPING,
+    "Mapping": MAPPING,
     abc.MutableMapping: MUTABLE_MAPPING,
     typing.MutableMapping: MUTABLE_MAPPING,
-    'MutableMapping': MUTABLE_MAPPING,
+    "MutableMapping": MUTABLE_MAPPING,
     abc.MappingView: MAPPING_VIEW,
     typing.MappingView: MAPPING_VIEW,
-    'MappingView': MAPPING_VIEW,
+    "MappingView": MAPPING_VIEW,
     abc.ItemsView: ITEMS_VIEW,
     typing.ItemsView: ITEMS_VIEW,
-    'ItemsView': ITEMS_VIEW,
+    "ItemsView": ITEMS_VIEW,
     abc.KeysView: KEYS_VIEW,
     typing.KeysView: KEYS_VIEW,
-    'KeysView': KEYS_VIEW,
+    "KeysView": KEYS_VIEW,
     abc.ValuesView: VALUES_VIEW,
     typing.ValuesView: VALUES_VIEW,
-    'ValuesView': VALUES_VIEW,
+    "ValuesView": VALUES_VIEW,
     abc.Awaitable: AWAITABLE,
     typing.Awaitable: AWAITABLE,
-    'Awaitable': AWAITABLE,
+    "Awaitable": AWAITABLE,
     abc.Coroutine: COROUTINE,
     typing.Coroutine: COROUTINE,
-    'Coroutine': COROUTINE,
+    "Coroutine": COROUTINE,
     abc.AsyncIterable: ASYNC_ITERABLE,
     typing.AsyncIterable: ASYNC_ITERABLE,
-    'AsyncIterable': ASYNC_ITERABLE,
+    "AsyncIterable": ASYNC_ITERABLE,
     abc.AsyncIterator: ASYNC_ITERATOR,
     typing.AsyncIterator: ASYNC_ITERATOR,
-    'AsyncIterator': ASYNC_ITERATOR,
+    "AsyncIterator": ASYNC_ITERATOR,
     abc.AsyncGenerator: ASYNC_GENERATOR,
     typing.AsyncGenerator: ASYNC_GENERATOR,
-    'AsyncGenerator': ASYNC_GENERATOR
-    }
+    "AsyncGenerator": ASYNC_GENERATOR,
+}
