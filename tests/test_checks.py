@@ -385,14 +385,10 @@ class TestValuesViewAttrs:
     """Test has_values_view_attrs function."""
 
     def test_dict_values(self):
-        # In Python 3.8, dict_values don't have __contains__
-        # They got __contains__ in Python 3.10+
-        import sys
-
-        if sys.version_info >= (3, 10):
-            assert has_values_view_attrs({}.values())
-        else:
-            assert not has_values_view_attrs({}.values())
+        # dict_values don't have __contains__ in any Python version (as of 3.12)
+        # ValuesView requires __len__, __iter__, and __contains__,
+        # but dict_values only has __len__ and __iter__
+        assert not has_values_view_attrs({}.values())
 
     def test_list(self):
         # Lists have __len__, __iter__, __contains__ which satisfies VALUES_VIEW (MAPPING_VIEW | COLLECTION)
