@@ -7,8 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.0] - 2024-10-18
-
 ### Added
 - Modern project infrastructure with `pyproject.toml` (PEP 621 compliant)
 - GitHub Actions workflows for CI/CD (tests, linting, publishing)
